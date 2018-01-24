@@ -1,0 +1,12 @@
+<?php
+include_once 'CustomException.php';
+
+
+try {
+    $title = $_GET['title'];
+    if (strlen($title >10)) {
+        throw new CustomException('Заголовок поста слишком длинный', 4);
+    }
+} catch (CustomException $e) {
+    echo 'Не получилось подключить БД'
+}
